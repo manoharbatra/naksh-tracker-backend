@@ -4,7 +4,10 @@ const classDataSchema = new mongoose.Schema(
     {
         date: { type: String, required: true }, // or Date if you prefer
         event: { type: String, required: true },
+        type: { type: String, required: true },
         place: { type: String, required: true },
+        city: { type: String, required: true },
+        state: { type: String, required: true },
         outcome: { type: String, required: true },
         link: { type: String, required: true },
         class: { type: Number, required: true },

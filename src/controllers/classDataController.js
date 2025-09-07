@@ -4,10 +4,10 @@ import ClassData from "../models/ClassData.js"
 // POST - Add new record
 export const addClassData = async (req, res) => {
     try {
-        const { class: classNum, date, event, place, outcome, link } = req.body
+        const { class: classNum, date, event, type, place, city, state, outcome, link } = req.body
 
         // Validation (extra safeguard)
-        if (!classNum || !date || !event || !place || !outcome || !link) {
+        if (!classNum || !date || !event || !type || !place || !city || !state || !outcome || !link) {
             return res.status(400).json({ message: "All fields are required" })
         }
 
@@ -15,7 +15,10 @@ export const addClassData = async (req, res) => {
             class: classNum,
             date,
             event,
+            type,
             place,
+            city,
+            state,
             outcome,
             link,
         })
